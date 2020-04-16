@@ -13,7 +13,13 @@ def go():
     mc.setBlocks(x, y + size - 1, z, x + size, y + size - 1, z + size, block.WOOD.id)
     mc.setBlocks(x + 1, y - 1, z + 1, x + size -2, y - 1, z + size -2, block.DIAMOND_BLOCK.id)
 pos = mc.player.getTilePos()
-x = pos.x+2
+x = pos.x + 2
 y = pos.y
 z = pos.z
-go()
+for _b in range(5):
+    go()
+
+    import random
+    c = random.randint(0, 15)
+    mc.setBlocks(x+1, y+1, z+1, x+size-1, y+1, z+size-1, block.WOOL.id, c)
+    x = x + size
